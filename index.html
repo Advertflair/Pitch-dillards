@@ -16,21 +16,16 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    
     <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
         }
-        
         .gradient-bg {
             background: linear-gradient(135deg, #4934bc 0%, #3a2a9a 100%);
         }
-        
         .text-gradient {
             background: linear-gradient(90deg, #fe2267, #ff9e02);
             -webkit-background-clip: text;
@@ -38,7 +33,6 @@
             background-clip: text;
             text-fill-color: transparent;
         }
-        
         .stat-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -46,70 +40,45 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        
         html {
             scroll-behavior: smooth;
         }
-        
         .section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding-top: 6rem; /* Reduced padding */
+            padding-bottom: 6rem; /* Reduced padding */
         }
-        
         .floating-nav {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-
-
-  z-index: 50;
-  background: rgba(255, 255, 255, 0.2);   /* semi-transparent */
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%); /* for Safari */
-  border-radius: 16px;
-  padding: 12px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle glass border */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);  /* soft glow shadow */
-}
-.floating-nav::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.05)
-  );
-  pointer-events: none; /* allow clicks to pass through */
-}       
-@media (max-width: 640px) {
-  .floating-nav { bottom: 12px; right: 12px; left: 50%; transform: translateX(-50%); }
-}
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 9999px;
+            padding: 12px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
         .nav-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: #cbd5e1;
-            margin: 4px 0;
+            margin: 8px 0;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
         .nav-dot.active {
             background: #4934bc;
             transform: scale(1.5);
         }
-        
         .nav-dot:hover {
             background: #6366f1;
             transform: scale(1.2);
         }
-        
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .floating-nav {
                 display: none;
             }
@@ -124,7 +93,7 @@
             <div class="nav-dot active" data-target="hero" title="Introduction"></div>
             <div class="nav-dot" data-target="opportunity" title="The Opportunity"></div>
             <div class="nav-dot" data-target="hidden-value" title="Hidden Value"></div>
-            <div class="nav-dot" data-target="solutions" title="Three Solutions"></div>
+            <div class="nav-dot" data-target="solutions" title="Solutions"></div>
             <div class="nav-dot" data-target="seo-sample" title="SEO Sample"></div>
             <div class="nav-dot" data-target="social-media" title="Social Media"></div>
             <div class="nav-dot" data-target="video-content" title="Video Content"></div>
@@ -135,9 +104,20 @@
         </div>
     </div>
 
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-40 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <img src="https://cdn.prod.website-files.com/6336da2704c4776a047e9529/6336da2704c47740ce7e9542_image%201.webp" alt="Advertflair Logo" class="h-10 w-auto">
+                <a href="#next-steps" class="bg-[#4934bc] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#3a2a9a] transition-all duration-300 transform hover:scale-105">
+                    Book Your Free Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="section gradient-bg text-white">
+        <section id="hero" class="section gradient-bg text-white" style="padding-top: 10rem; padding-bottom: 8rem;">
             <div class="container mx-auto px-6 text-center">
                 <span class="text-sm font-bold uppercase tracking-widest text-white/70">Digital Marketing Presentation</span>
                 <h1 class="text-4xl md:text-6xl font-extrabold mt-4 mb-6 leading-tight">
@@ -155,7 +135,7 @@
                     </a>
                 </div>
                 <div class="flex items-center justify-center space-x-8 text-sm text-white/60">
-                    <div>New York • Dubai • Dallas • Chennai • Bangalore </div>
+                    <div>New York • Dubai • Dallas • Chennai • Bangalore</div>
                     <div>•</div>
                     <div>3D & AI Super Studio</div>
                 </div>
@@ -163,45 +143,46 @@
         </section>
 
         <!-- Client Info Bar -->
-        <section class="bg-white py-16 shadow-md">
+        <section class="bg-transparent" style="padding-top: 0; padding-bottom: 4rem; min-height: 0;">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="flex flex-col items-center">
-                        <i data-lucide="target" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
-                        <h3 class="font-bold text-slate-500 text-sm uppercase">Focus</h3>
-                        <p class="text-lg font-semibold text-slate-800">AI-Enhanced Marketing</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <i data-lucide="shopping-bag" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
-                        <h3 class="font-bold text-slate-500 text-sm uppercase">Industry</h3>
-                        <p class="text-lg font-semibold text-slate-800">Retail & Fashion</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <i data-lucide="trending-up" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
-                        <h3 class="font-bold text-slate-500 text-sm uppercase">Objective</h3>
-                        <p class="text-lg font-semibold text-slate-800">Digital Transformation</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <i data-lucide="users" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
-                        <h3 class="font-bold text-slate-500 text-sm uppercase">Client</h3>
-                        <p class="text-lg font-semibold text-slate-800">Dillards</p>
+                <div class="bg-white py-8 shadow-md -mt-20 relative z-10 mx-auto max-w-5xl rounded-xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="target" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
+                            <h3 class="font-bold text-slate-500 text-sm uppercase">Focus</h3>
+                            <p class="text-lg font-semibold text-slate-800">AI-Enhanced Marketing</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="shopping-bag" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
+                            <h3 class="font-bold text-slate-500 text-sm uppercase">Industry</h3>
+                            <p class="text-lg font-semibold text-slate-800">Retail & Fashion</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="trending-up" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
+                            <h3 class="font-bold text-slate-500 text-sm uppercase">Objective</h3>
+                            <p class="text-lg font-semibold text-slate-800">Digital Transformation</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="users" class="w-8 h-8 mb-2 text-[#4934bc]"></i>
+                            <h3 class="font-bold text-slate-500 text-sm uppercase">Client</h3>
+                            <p class="text-lg font-semibold text-slate-800">Dillards</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- The Opportunity -->
-        <section id="opportunity" class="section py-20">
+        <section id="opportunity" class="section">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Your AI Images Are Just the <span class="text-gradient">Beginning</span></h2>
                     <p class="text-lg text-slate-600 mb-16">
-                        You've already seen the power of our AI-generated product images on your website. 
+                        You've already seen the power of our AI-generated product images on your website.
                         But here's what you might not know:
                     </p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-slate-200/50">
                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mb-4">
                             <i data-lucide="trending-up" class="text-[#4934bc]"></i>
@@ -209,23 +190,20 @@
                         <h3 class="font-bold text-lg mb-2">Drive More Organic Traffic</h3>
                         <p class="text-slate-600">Advanced SEO optimization that significantly increases product page visibility</p>
                     </div>
-                    
                     <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-slate-200/50">
                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mb-4">
-                            <i data-lucide="globe" class="text-[#4934bc]"></i>
+                            <i data-lucide="share-2" class="text-[#4934bc]"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2">Generate Social Content Automatically</h3>
                         <p class="text-slate-600">Months of social media content created from your existing AI workflow</p>
                     </div>
-                    
                     <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-slate-200/50">
                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mb-4">
-                            <i data-lucide="play" class="text-[#4934bc]"></i>
+                            <i data-lucide="video" class="text-[#4934bc]"></i>
                         </div>
                         <h3 class="font-bold text-lg mb-2">Create Premium Video Assets</h3>
                         <p class="text-slate-600">High-conversion video content that increases engagement and sales</p>
                     </div>
-                    
                     <div class="stat-card bg-white p-6 rounded-xl shadow-lg border border-slate-200/50">
                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mb-4">
                             <i data-lucide="bar-chart-3" class="text-[#4934bc]"></i>
@@ -234,76 +212,54 @@
                         <p class="text-slate-600">Performance analytics and optimization recommendations</p>
                     </div>
                 </div>
-                
-                <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8">
-                    <div class="text-center">
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Transform Your Investment</h2>
-                        <div class="text-lg text-gray-600 mb-6">
-                            From single images to complete digital marketing ecosystem
-                        </div>
-                        <div class="inline-block bg-white p-6 rounded-xl shadow-lg">
-                            <div class="text-xl md:text-2xl font-bold text-blue-600 mb-2">The foundation is built.</div>
-                            <div class="text-gray-700">Now let's maximize the return.</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
         <!-- Hidden Value -->
-        <section id="hidden-value" class="section py-20 bg-white">
+        <section id="hidden-value" class="section bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">The <span class="text-gradient">Hidden Value</span> in Your Current Workflow</h2>
                     <p class="text-lg text-slate-600 mb-12">Computer Vision Intelligence = Marketing Intelligence</p>
                 </div>
-                
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">What happens behind every image we create:</h3>
-                        
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6">What happens behind every image we create:</h3>
                         <div class="space-y-4">
-                            <div class="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg">
-                                <div class="w-3 h-3 bg-blue-500 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-700"><strong>Advanced product attribute analysis</strong> (fabric, fit, style details)</span>
+                            <div class="flex items-start space-x-4 p-4 bg-slate-100 rounded-lg">
+                                <i data-lucide="scan-line" class="w-6 h-6 text-[#4934bc] mt-1 flex-shrink-0"></i>
+                                <span class="text-slate-700"><strong>Advanced product attribute analysis</strong> (fabric, fit, style details)</span>
                             </div>
-                            
-                            <div class="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg">
-                                <div class="w-3 h-3 bg-purple-500 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-700"><strong>Brand positioning intelligence</strong> (collection alignment, seasonal context)</span>
+                            <div class="flex items-start space-x-4 p-4 bg-slate-100 rounded-lg">
+                                <i data-lucide="gem" class="w-6 h-6 text-[#4934bc] mt-1 flex-shrink-0"></i>
+                                <span class="text-slate-700"><strong>Brand positioning intelligence</strong> (collection alignment, seasonal context)</span>
                             </div>
-                            
-                            <div class="flex items-center space-x-4 p-4 bg-pink-50 rounded-lg">
-                                <div class="w-3 h-3 bg-pink-500 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-700"><strong>Visual context optimization</strong> (background, styling, mood)</span>
+                            <div class="flex items-start space-x-4 p-4 bg-slate-100 rounded-lg">
+                                <i data-lucide="image" class="w-6 h-6 text-[#4934bc] mt-1 flex-shrink-0"></i>
+                                <span class="text-slate-700"><strong>Visual context optimization</strong> (background, styling, mood)</span>
                             </div>
-                            
-                            <div class="flex items-center space-x-4 p-4 bg-green-50 rounded-lg">
-                                <div class="w-3 h-3 bg-green-500 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-700"><strong>Technical specification extraction</strong> (neckline, construction, care)</span>
+                            <div class="flex items-start space-x-4 p-4 bg-slate-100 rounded-lg">
+                                <i data-lucide="file-text" class="w-6 h-6 text-[#4934bc] mt-1 flex-shrink-0"></i>
+                                <span class="text-slate-700"><strong>Technical specification extraction</strong> (neckline, construction, care)</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200/50">
                         <div class="text-center mb-8">
                             <i data-lucide="zap" class="w-16 h-16 mx-auto text-[#ff9e02] mb-4"></i>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Computer Vision Intelligence</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-900">From Intelligence to Impact</h3>
                         </div>
-                        
                         <div class="space-y-6">
-                            <div class="p-4 bg-white rounded-lg shadow-sm">
-                                <div class="text-sm text-gray-500 mb-1">Current Reality</div>
-                                <div class="text-lg font-semibold text-gray-900">This intelligence creates one image</div>
+                            <div class="p-4 bg-slate-100 rounded-lg text-center">
+                                <div class="text-sm text-slate-500 mb-1">Current Reality</div>
+                                <div class="text-lg font-semibold text-slate-900">This intelligence creates one image.</div>
                             </div>
-                            
                             <div class="flex justify-center">
-                                <i data-lucide="arrow-big-right" class="w-8 h-8 text-[#ff9e02]"></i>
+                                <i data-lucide="arrow-down" class="w-8 h-8 text-[#fe2267]"></i>
                             </div>
-                            
-                            <div class="p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white">
-                                <div class="text-sm text-blue-100 mb-1">Our Proposal</div>
-                                <div class="text-lg font-semibold">This intelligence can power your entire digital presence</div>
+                            <div class="p-4 bg-gradient-to-r from-[#4934bc] to-[#3a2a9a] rounded-lg text-white text-center">
+                                <div class="text-sm text-white/80 mb-1">Our Proposal</div>
+                                <div class="text-lg font-semibold">This intelligence powers your entire digital presence.</div>
                             </div>
                         </div>
                     </div>
@@ -312,51 +268,38 @@
         </section>
 
         <!-- Three Solutions -->
-        <section id="solutions" class="section py-20">
+        <section id="solutions" class="section">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Three Strategic <span class="text-gradient">Solutions</span> from One AI Workflow</h2>
                     <p class="text-lg text-slate-600 mb-12">Transform your product intelligence into comprehensive digital marketing assets</p>
                 </div>
-                
                 <div class="grid md:grid-cols-3 gap-8 text-center">
                     <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border border-slate-200/50">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mx-auto mb-6">
-                            <i data-lucide="target" class="w-8 h-8 text-blue-600"></i>
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#4934bc]/10 mx-auto mb-6">
+                            <i data-lucide="search" class="w-8 h-8 text-[#4934bc]"></i>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Advanced SEO Optimization</h3>
-                        <p class="text-gray-600 mb-6">Transform product intelligence into search rankings</p>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-sm text-blue-600 font-semibold">Business Impact</div>
-                            <div class="text-gray-700">Higher search rankings, increased organic traffic</div>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Advanced SEO Optimization</h3>
+                        <p class="text-slate-600 mb-4">Transform product intelligence into search rankings</p>
+                        <div class="bg-slate-100 p-3 rounded-lg text-sm font-semibold text-slate-700">Higher search rankings, increased organic traffic</div>
                     </div>
-                    
                     <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border border-slate-200/50">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 mx-auto mb-6">
-                            <i data-lucide="globe" class="w-8 h-8 text-purple-600"></i>
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#4934bc]/10 mx-auto mb-6">
+                            <i data-lucide="share-2" class="w-8 h-8 text-[#4934bc]"></i>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Social Media Content Engine</h3>
-                        <p class="text-gray-600 mb-6">Multi-platform assets generated automatically</p>
-                        <div class="bg-purple-50 p-4 rounded-lg">
-                            <div class="text-sm text-purple-600 font-semibold">Business Impact</div>
-                            <div class="text-gray-700">Improved engagement, reduced content creation costs</div>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Social Media Content Engine</h3>
+                        <p class="text-slate-600 mb-4">Multi-platform assets generated automatically</p>
+                        <div class="bg-slate-100 p-3 rounded-lg text-sm font-semibold text-slate-700">Improved engagement, reduced content creation costs</div>
                     </div>
-                    
                     <div class="stat-card bg-white p-8 rounded-2xl shadow-lg border border-slate-200/50">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-100 mx-auto mb-6">
-                            <i data-lucide="play" class="w-8 h-8 text-pink-600"></i>
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-[#4934bc]/10 mx-auto mb-6">
+                            <i data-lucide="video" class="w-8 h-8 text-[#4934bc]"></i>
                         </div>
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Premium Video Content</h3>
-                        <p class="text-gray-600 mb-6">High-conversion video assets for all channels</p>
-                        <div class="bg-pink-50 p-4 rounded-lg">
-                            <div class="text-sm text-pink-600 font-semibold">Business Impact</div>
-                            <div class="text-gray-700">Higher conversion rates, premium brand positioning</div>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Premium Video Content</h3>
+                        <p class="text-slate-600 mb-4">High-conversion video assets for all channels</p>
+                        <div class="bg-slate-100 p-3 rounded-lg text-sm font-semibold text-slate-700">Higher conversion rates, premium brand positioning</div>
                     </div>
                 </div>
-                
                 <div class="text-center mt-12">
                     <div class="inline-block bg-gradient-to-r from-[#4934bc] to-[#fe2267] text-white px-8 py-4 rounded-lg text-lg font-semibold">
                         Each service builds on your existing investment while delivering measurable business results
@@ -365,619 +308,102 @@
             </div>
         </section>
 
-<!-- SEO Sample -->
-<section id="seo-sample" class="section py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">SEO Metadata <span class="text-gradient">Sample</span>: Strategic Optimization in Action</h2>
-            <p class="text-lg text-gray-600">See the difference between basic and AI-enhanced metadata</p>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-8 items-start">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200/50">
-                <div class="h-96 bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center p-8">
-                    <div class="text-center">
-                        <img src="/assets/images/alex-marie-hana-set.jpeg" 
-                             alt="Alex Marie Hana Clementine Embroidered Two-Piece Set" 
-                             class="w-full h-full object-cover rounded-lg mx-auto mb-4 max-w-64 max-h-80">
-                        <p class="text-gray-600">Clementine Embroidered Two-Piece Set</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-lg">
-                    <h3 class="text-lg font-bold text-red-800 mb-3">❌ Current Basic Metadata</h3>
-                    <div class="space-y-2 text-sm">
-                        <div><strong>Title:</strong> Red Dress</div>
-                        <div><strong>Alt:</strong> Woman in red dress</div>
-                        <div><strong>Description:</strong> Red dress for women</div>
-                        <div><strong>Keywords:</strong> red dress, women's clothing</div>
-                    </div>
-                </div>
-                
-                <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-lg">
-                    <h3 class="text-lg font-bold text-green-800 mb-3">✅ Our Strategic Metadata</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <strong class="text-[#4934bc]">Title:</strong>
-                            <div class="mt-1 p-2 bg-white rounded border">Alex Marie Hana Clementine Embroidered Blouse & Pants Set | Resort Wear</div>
-                        </div>
-                        <div>
-                            <strong class="text-[#4934bc]">Alt Text:</strong>
-                            <div class="mt-1 p-2 bg-white rounded border">Alex Marie Hana embroidered square neck sleeveless blouse in Clementine with white botanical embroidery, styled with coordinating wide-leg pants</div>
-                        </div>
-                        <div>
-                            <strong class="text-[#4934bc]">Meta Description:</strong>
-                            <div class="mt-1 p-2 bg-white rounded border">Shop Alex Marie Hana embroidered blouse and pants set in Clementine. Viscose-linen blend with botanical embroidery. Perfect for resort dining and vacation style.</div>
-                        </div>
-                        <div>
-                            <strong class="text-[#4934bc]">Keywords:</strong>
-                            <div class="mt-1 p-2 bg-white rounded border">Alex Marie Hana, Clementine embroidered set, viscose linen coordinating outfit, botanical embroidery resort wear</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-blue-50 p-4 rounded-lg">
-                    <h4 class="font-bold text-blue-800 mb-2">Why This Works:</h4>
-                    <ul class="text-sm text-blue-700 space-y-1">
-                        <li>• Targets specific brand searches</li>
-                        <li>• Includes fabric and care information</li>
-                        <li>• Optimizes for seasonal/occasion searches</li>
-                        <li>• Enables rich snippet appearance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Social Media -->
-<section id="social-media" class="section py-20">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Social Media Content: <span class="text-gradient">Multi-Platform</span> Optimization</h2>
-            <p class="text-lg text-gray-600">From one product image, we generate content for every platform</p>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Instagram Content</h3>
-                
-                <div class="bg-white rounded-lg p-6 mb-6 shadow-lg border border-slate-200/50">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
-                        <span class="font-semibold">@dillards</span>
-                    </div>
-                    
-                    <div class="h-64 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="/assets/images/alex-marie-hana-set.png" 
-                             alt="Alex Marie Hana Clementine Embroidered Two-Piece Set" 
-                             class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    
-                    <div class="text-sm text-gray-700 mb-3">
-                        "Resort ready in our Hana collection ✨ This embroidered two-piece transitions effortlessly from poolside to dinner. The botanical details in our signature Clementine shade are everything we love about summer styling. Shop the coordinating set now! 🌺"
-                    </div>
-                    
-                    <div class="text-xs text-[#4934bc]">
-                        #AlexMarie #HanaCollection #ResortWear #CoordinatingSet #VacationStyle #EmbroideryDetails
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg p-4 shadow-lg border border-slate-200/50">
-                    <h4 class="font-semibold text-gray-900 mb-2">Instagram Story Variation</h4>
-                    <div class="text-sm text-gray-600">
-                        "Swipe up to shop this embroidered set! Perfect for your next getaway 🏖️"<br/>
-                        <span class="text-purple-600">[Poll sticker: "Pool party or dinner date?"]</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="stat-card bg-blue-50 rounded-lg p-6 border border-blue-200">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4">Facebook Post</h3>
-                    <div class="text-sm text-gray-700 mb-3">
-                        "Date night calls for something special. Our ruched midi dress combines comfort with elegance - the mock neck design and bodycon silhouette create a sophisticated look that's perfect for evening out. Made from our signature stretch knit that moves with you all night long."
-                    </div>
-                    <div class="inline-block bg-[#4934bc] text-white px-4 py-2 rounded text-sm font-semibold">
-                        Shop Evening Dresses
-                    </div>
-                </div>
-                
-                <div class="stat-card bg-red-50 rounded-lg p-6 border border-red-200">
-                    <h3 class="text-xl font-bold text-red-800 mb-4">Pinterest Description</h3>
-                    <div class="text-sm text-gray-700">
-                        "Evening Date Night Outfit Ideas | Blue Ruched Midi Dress | Mock Neck Bodycon Style | City Evening Fashion | Sophisticated Date Outfit"
-                    </div>
-                </div>
-                
-                <div class="stat-card bg-white rounded-lg p-6 shadow-lg border border-slate-200/50">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Content Efficiency</h3>
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
-                            <div class="text-2xl font-bold text-green-600">60%</div>
-                            <div class="text-sm text-gray-600">Reduction in content creation time</div>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                            <div class="text-2xl font-bold text-blue-600">35%</div>
-                            <div class="text-sm text-gray-600">Increase in engagement</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Video Content -->
-<section id="video-content" class="section py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"><span class="text-gradient">Premium </span>Video Content: Bring Products to Life</h2>
-            <p class="text-lg md:text-xl text-slate-600">5-second videos that drive 80% higher conversion rates</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Video Formats We Create:</h3>
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-200/50">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
-                            <i data-lucide="play" class="w-6 h-6 text-blue-600"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Product Rotation</div>
-                            <div class="text-sm text-gray-600">360-degree view highlighting key features</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-200/50">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-100">
-                            <i data-lucide="zap" class="w-6 h-6 text-purple-600"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Styling Moments</div>
-                            <div class="text-sm text-gray-600">Quick transitions showing versatility</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-200/50">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-pink-100">
-                            <i data-lucide="target" class="w-6 h-6 text-pink-600"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Texture Focus</div>
-                            <div class="text-sm text-gray-600">Close-ups of fabric and embroidery details</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border border-slate-200/50">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                            <i data-lucide="globe" class="w-6 h-6 text-green-600"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-gray-900">Lifestyle Context</div>
-                            <div class="text-sm text-gray-600">Models in action showing real wear</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Video Impact</h3>
-                <div class="space-y-6">
-                    <div class="text-center p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                        <div class="text-3xl md:text-4xl font-bold text-[#ff9e02] mb-2">80%</div>
-                        <div class="text-gray-600">Higher conversion rates with video content</div>
-                    </div>
-                    
-                    <div class="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
-                        <div class="text-3xl md:text-4xl font-bold text-[#4934bc] mb-2">200%+</div>
-                        <div class="text-gray-600">Higher engagement on social media</div>
-                    </div>
-                    
-                    <div class="text-center p-4 bg-green-50 rounded-lg border border-green-200">
-                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2">3x</div>
-                        <div class="text-gray-600">Increase in time spent on product pages</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8">
-            <h3 class="text-xl md:text-2xl font-bold text-center text-gray-900 mb-8">Video Content <span class="text-gradient">Samples</span></h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-lg border border-slate-200/50">
-                    <div class="h-64 rounded-lg mb-4 overflow-hidden">
-                        <video 
-                            class="w-full h-full object-cover rounded-lg"
-                            controls
-                            poster=""
-                            preload="metadata">
-                            <source src="https://github.com/Advertflair/Pitch-dillards/raw/main/assets/videos/alex-marie-option-1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="font-semibold mb-2 text-gray-900">Alex Marie Embroidered Set</div>
-                    <div class="text-sm text-gray-600">360-degree rotation showing embroidery details</div>
-                </div>
-                
-                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-lg border border-slate-200/50">
-                    <div class="h-64 rounded-lg mb-4 overflow-hidden">
-                        <video 
-                            class="w-full h-full object-cover rounded-lg"
-                            controls
-                            poster=""
-                            preload="metadata">
-                            <source src="https://github.com/Advertflair/Pitch-dillards/raw/main/assets/videos/Reba%20Sage%20Knit%20V-Neck%20Asymmetrical%20Fringe%20Long%20Sleeve%20Button%20Down%20Cardigan.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="font-semibold mb-2 text-gray-900">Reba Sage Knit Cardigan</div>
-                    <div class="text-sm text-gray-600">Model sequence highlighting fit and styling</div>
-                </div>
-                
-                <div class="stat-card bg-white rounded-lg p-6 text-center shadow-lg border border-slate-200/50">
-                    <div class="h-64 rounded-lg mb-4 overflow-hidden">
-                        <video 
-                            class="w-full h-full object-cover rounded-lg"
-                            controls
-                            poster=""
-                            preload="metadata">
-                            <source src="https://github.com/Advertflair/Pitch-dillards/raw/main/assets/videos/RowmTall%20Tourister%20Short%20Sleeve%20Multi%20Stripe%20Camp%20Button%20Front%20Shirt.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="font-semibold mb-2 text-gray-900">RowmTall Stripe Shirt</div>
-                    <div class="text-sm text-gray-600">Quick styling transformation</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing -->
-<section id="pricing" class="section py-20">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Investment <span class="text-gradient">Packages</span></h2>
-            <p class="text-lg md:text-xl text-gray-600">Transparent pricing that scales with your needs</p>
-            <div class="mt-4 text-sm text-gray-500">
-                Base AI image generation: $65 per image
-            </div>
-        </div>
-        
-        <div class="grid md:grid-cols-4 gap-6 mb-12">
-            <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border-2 border-blue-200">
-                <div class="text-center mb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-blue-800 mb-2">SEO Enhanced</h3>
-                    <div class="text-sm text-blue-600">Current Images + Metadata</div>
-                </div>
-                <div class="space-y-4 mb-6">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">AI product images</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Advanced SEO metadata</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Schema.org markup</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Long-tail keywords</span>
-                    </div>
-                </div>
-                <div class="text-center bg-blue-50 p-4 rounded-lg">
-                    <div class="text-2xl md:text-3xl font-bold text-blue-800 mb-1">$90</div>
-                    <div class="text-sm text-gray-600">per image</div>
-                    <div class="text-xs text-gray-500 mt-1">$65 + $25 SEO enhancement</div>
-                </div>
-            </div>
-
-            <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-200">
-                <div class="text-center mb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-purple-800 mb-2">Social Ready</h3>
-                    <div class="text-sm text-purple-600">Images + SEO + Social Content</div>
-                </div>
-                <div class="space-y-4 mb-6">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Everything in SEO Enhanced</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Multi-platform social assets</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">AI-generated captions</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Hashtag strategy</span>
-                    </div>
-                </div>
-                <div class="text-center bg-purple-50 p-4 rounded-lg">
-                    <div class="text-2xl md:text-3xl font-bold text-purple-800 mb-1">$125</div>
-                    <div class="text-sm text-gray-600">per image</div>
-                    <div class="text-xs text-gray-500 mt-1">$65 + $25 SEO + $35 social</div>
-                </div>
-            </div>
-
-            <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border-2 border-pink-200">
-                <div class="text-center mb-6">
-                    <h3 class="text-lg md:text-xl font-bold text-pink-800 mb-2">Video Enhanced</h3>
-                    <div class="text-sm text-pink-600">5-Second Premium Videos</div>
-                </div>
-                <div class="space-y-4 mb-6">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Product rotation videos</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Styling demonstrations</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Multiple aspect ratios</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Platform optimization</span>
-                    </div>
-                </div>
-                <div class="text-center bg-pink-50 p-4 rounded-lg">
-                    <div class="text-2xl md:text-3xl font-bold text-pink-800 mb-1">$325</div>
-                    <div class="text-sm text-gray-600">per 5-second video</div>
-                    <div class="text-xs text-gray-500 mt-1">Premium video production</div>
-                </div>
-            </div>
-
-            <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border-4 border-[#ff9e02] relative">
-                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div class="bg-[#ff9e02] text-white px-4 py-1 rounded-full text-xs font-bold">
-                        MOST POPULAR
-                    </div>
-                </div>
-                <div class="text-center mb-6 mt-2">
-                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Complete Suite</h3>
-                    <div class="text-sm text-gray-600">All Services + Analytics</div>
-                </div>
-                <div class="space-y-4 mb-6">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Everything included</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Performance analytics</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Monthly optimization</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
-                        <span class="text-sm">Priority support</span>
-                    </div>
-                </div>
-                <div class="text-center bg-orange-50 p-4 rounded-lg">
-                    <div class="text-2xl md:text-3xl font-bold text-[#ff9e02] mb-1">$412.50</div>
-                    <div class="text-sm text-gray-600">per image + video bundle</div>
-                    <div class="text-xs text-gray-500 mt-1">$87.50 (Social Ready) + $325 (Video)</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 mb-8">
-            <h3 class="text-xl md:text-2xl font-bold text-center text-gray-900 mb-8">Volume Pricing</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="stat-card text-center p-6 bg-white rounded-lg shadow-sm">
-                    <div class="text-2xl md:text-3xl font-bold text-[#4934bc] mb-2">50-99</div>
-                    <div class="text-sm text-gray-600 mb-2">Images per month</div>
-                    <div class="text-lg font-semibold text-green-600">10% Discount</div>
-                    <div class="text-xs text-gray-500 mt-1">Starting at $58.50/image</div>
-                </div>
-                <div class="stat-card text-center p-6 bg-white rounded-lg shadow-sm">
-                    <div class="text-2xl md:text-3xl font-bold text-[#4934bc] mb-2">100-199</div>
-                    <div class="text-sm text-gray-600 mb-2">Images per month</div>
-                    <div class="text-lg font-semibold text-green-600">15% Discount</div>
-                    <div class="text-xs text-gray-500 mt-1">Starting at $55.25/image</div>
-                </div>
-                <div class="stat-card text-center p-6 bg-white rounded-lg shadow-sm">
-                    <div class="text-2xl md:text-3xl font-bold text-[#4934bc] mb-2">200+</div>
-                    <div class="text-sm text-gray-600 mb-2">Images per month</div>
-                    <div class="text-lg font-semibold text-green-600">20% Discount</div>
-                    <div class="text-xs text-gray-500 mt-1">Starting at $52/image</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border border-slate-200">
-                <div class="text-center">
-                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Performance Analytics Dashboard</h3>
-                    <p class="text-gray-600 mb-4">Monthly performance reports, optimization recommendations, and competitive analysis</p>
-                    <div class="text-2xl md:text-3xl font-bold text-[#4934bc] mb-1">$750</div>
-                    <div class="text-sm text-gray-600">per month</div>
-                </div>
-            </div>
-            
-            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
-                <div class="text-center">
-                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Enterprise Package</h3>
-                    <p class="text-gray-600 mb-4">Custom pricing for 500+ images/month with dedicated account management</p>
-                    <div class="text-xl font-bold text-green-600 mb-1">Custom Quote</div>
-                    <div class="text-sm text-gray-600">Contact for pricing</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center bg-gray-50 rounded-2xl p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-2">📞 Ready to get started?</h3>
-            <p class="text-gray-600 mb-4">Schedule a consultation to discuss your specific needs and volume requirements</p>
-            <div class="inline-block bg-[#4934bc] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3d2a9a] transition-colors">
-                Get Custom Quote
-            </div>
-        </div>
-    </div>
-</section>
-        <!-- Integration -->
-        <section id="integration" class="section py-20 bg-white">
+        <!-- SEO Sample -->
+        <section id="seo-sample" class="section bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Integration <span class="text-gradient">Strategy</span></h2>
-                    <p class="text-lg md:text-xl text-gray-600">Seamless enhancement of your current workflow</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">SEO Metadata <span class="text-gradient">in Action</span></h2>
+                    <p class="text-lg text-slate-600">See the difference between basic and AI-enhanced metadata.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="stat-card bg-white rounded-2xl shadow-lg p-8 border border-slate-200/50">
-                        <div class="text-center mb-6">
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-bold text-[#4934bc]">1</span>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold text-gray-900">Foundation</h3>
-                            <p class="text-sm text-gray-600">Week 1-2</p>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Implement enhanced metadata for current image library</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Set up social content templates</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Create initial video assets for top performers</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Establish analytics baseline</span>
-                            </div>
-                        </div>
+                <div class="grid lg:grid-cols-2 gap-8 items-start">
+                    <div class="stat-card bg-white rounded-2xl shadow-lg p-6 border border-slate-200/50">
+                        <img src="/assets/images/alex-marie-hana-set.jpeg" alt="Alex Marie Hana Clementine Embroidered Two-Piece Set" class="w-full h-auto object-cover rounded-lg mx-auto mb-4">
+                        <p class="text-center text-slate-600">Clementine Embroidered Two-Piece Set</p>
                     </div>
-
-                    <div class="stat-card bg-white rounded-2xl shadow-lg p-8 border border-slate-200/50">
-                        <div class="text-center mb-6">
-                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-bold text-purple-600">2</span>
-                            </div>
-                            <h3 class="text-lg md:text-xl font-bold text-gray-900">Automation</h3>
-                            <p class="text-sm text-gray-600">Week 3-4</p>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Deploy automated social posting schedule</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Integrate video content into product pages</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Monitor performance metrics</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Team training and workflow integration</span>
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-200/50">
+                            <h3 class="text-lg font-bold text-slate-500 mb-4 flex items-center"><i data-lucide="x-circle" class="w-5 h-5 mr-2 text-[#fe2267]"></i>Current Basic Metadata</h3>
+                            <div class="space-y-2 text-sm text-slate-600">
+                                <p><strong>Title:</strong> Red Dress</p>
+                                <p><strong>Alt:</strong> Woman in red dress</p>
+                                <p><strong>Description:</strong> Red dress for women</p>
+                                <p><strong>Keywords:</strong> red dress, women's clothing</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="stat-card bg-white rounded-2xl shadow-lg p-8 border border-slate-200/50">
-                        <div class="text-center mb-6">
-                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-2xl font-bold text-green-600">3</span>
+                        <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#4934bc]">
+                            <h3 class="text-lg font-bold text-[#4934bc] mb-4 flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-2 text-[#4934bc]"></i>Our Strategic Metadata</h3>
+                            <div class="space-y-3 text-sm">
+                                <div>
+                                    <strong class="text-slate-700">Title:</strong>
+                                    <p class="mt-1 p-2 bg-slate-100 rounded">Alex Marie Hana Clementine Embroidered Blouse & Pants Set | Resort Wear</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700">Alt Text:</strong>
+                                    <p class="mt-1 p-2 bg-slate-100 rounded">Alex Marie Hana embroidered square neck sleeveless blouse in Clementine with white botanical embroidery, styled with coordinating wide-leg pants</p>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-700">Meta Description:</strong>
+                                    <p class="mt-1 p-2 bg-slate-100 rounded">Shop Alex Marie Hana embroidered blouse and pants set in Clementine. Viscose-linen blend with botanical embroidery. Perfect for resort dining and vacation style.</p>
+                                </div>
                             </div>
-                            <h3 class="text-lg md:text-xl font-bold text-gray-900">Optimization</h3>
-                            <p class="text-sm text-gray-600">Week 5-6</p>
                         </div>
-                        <div class="space-y-3">
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Analyze performance data</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Refine content strategy based on results</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Scale successful approaches across collections</span>
-                            </div>
-                            <div class="flex items-start space-x-3">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700">Plan next quarter expansion</span>
-                            </div>
+                        <div class="bg-slate-100 p-4 rounded-lg">
+                            <h4 class="font-bold text-[#4934bc] mb-2 flex items-center"><i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>Why This Works:</h4>
+                            <ul class="text-sm text-slate-700 space-y-1 list-disc list-inside">
+                                <li>Targets specific brand searches</li>
+                                <li>Includes fabric and care information</li>
+                                <li>Optimizes for seasonal/occasion searches</li>
+                                <li>Enables rich snippet appearance</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Working with Your SEO Team</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <span class="text-sm font-bold text-[#4934bc]">We</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-gray-900">Provide</div>
-                                    <div class="text-sm text-gray-600">Granular product intelligence and optimized content</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <span class="text-sm font-bold text-purple-600">Your Team</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-gray-900">Manage</div>
-                                    <div class="text-sm text-gray-600">Technical SEO, site structure, and strategy implementation</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <span class="text-sm font-bold text-green-600">Result</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-gray-900">Together</div>
-                                    <div class="text-sm text-gray-600">Create comprehensive search optimization approach</div>
-                                </div>
-                            </div>
+        <!-- Social Media -->
+        <section id="social-media" class="section">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Social Media Content: <span class="text-gradient">Multi-Platform</span></h2>
+                    <p class="text-lg text-slate-600">From one product image, we generate optimized content for every platform.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200/50">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Instagram Post</h3>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 bg-gradient-to-r from-[#4934bc] to-[#fe2267] rounded-full"></div>
+                            <span class="font-semibold">@dillards</span>
+                        </div>
+                        <img src="/assets/images/alex-marie-hana-set.png" alt="Instagram Post for Dillards" class="w-full h-auto rounded-lg mb-4">
+                        <div class="text-sm text-slate-700 mb-3">
+                            "Resort ready in our Hana collection ✨ This embroidered two-piece transitions effortlessly from poolside to dinner. The botanical details in our signature Clementine shade are everything we love about summer styling. Shop the coordinating set now!"
+                        </div>
+                        <div class="text-xs text-[#4934bc] font-semibold">
+                            #AlexMarie #HanaCollection #ResortWear #CoordinatingSet #VacationStyle
                         </div>
                     </div>
-
-                    <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Expected Timeline Results</h3>
-                        <div class="space-y-6">
-                            <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <div class="space-y-6">
+                        <div class="stat-card bg-white rounded-lg p-6 shadow-lg border border-slate-200/50">
+                            <h3 class="text-xl font-bold text-slate-800 mb-4">Facebook & Pinterest</h3>
+                            <p class="text-sm text-slate-700 mb-3">
+                                <strong>Facebook:</strong> "Date night calls for something special. Our ruched midi dress combines comfort with elegance..."
+                            </p>
+                            <p class="text-sm text-slate-700">
+                                <strong>Pinterest:</strong> "Evening Date Night Outfit Ideas | Blue Ruched Midi Dress | Mock Neck Bodycon Style..."
+                            </p>
+                        </div>
+                        <div class="stat-card bg-white rounded-lg p-6 shadow-lg border border-slate-200/50">
+                            <h3 class="text-xl font-bold text-slate-800 mb-4">Content Efficiency</h3>
+                            <div class="flex justify-around text-center">
                                 <div>
-                                    <div class="font-semibold text-blue-800">Week 2</div>
-                                    <div class="text-sm text-blue-600">First metadata improvements live</div>
+                                    <div class="text-3xl font-bold text-[#4934bc]">60%</div>
+                                    <div class="text-sm text-slate-600">Less Creation Time</div>
                                 </div>
-                                <div class="text-xl md:text-2xl font-bold text-blue-600">+15%</div>
-                            </div>
-                            <div class="flex justify-between items-center p-4 bg-purple-50 rounded-lg border border-purple-200">
                                 <div>
-                                    <div class="font-semibold text-purple-800">Week 4</div>
-                                    <div class="text-sm text-purple-600">Social content automation active</div>
+                                    <div class="text-3xl font-bold text-[#fe2267]">35%</div>
+                                    <div class="text-sm text-slate-600">More Engagement</div>
                                 </div>
-                                <div class="text-xl md:text-2xl font-bold text-purple-600">+35%</div>
-                            </div>
-                            <div class="flex justify-between items-center p-4 bg-green-50 rounded-lg border border-green-200">
-                                <div>
-                                    <div class="font-semibold text-green-800">Week 6</div>
-                                    <div class="text-sm text-green-600">Full optimization implemented</div>
-                                </div>
-                                <div class="text-xl md:text-2xl font-bold text-green-600">+60%</div>
                             </div>
                         </div>
                     </div>
@@ -985,376 +411,484 @@
             </div>
         </section>
 
-<!-- Business Impact -->
-<section id="business-impact" class="section py-20">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Expected Business <span class="text-gradient">Impact</span></h2>
-            <p class="text-lg md:text-xl text-gray-600">Measurable results you can track</p>
-        </div>
-        
-        <div class="grid lg:grid-cols-3 gap-8 mb-16">
-            <div class="stat-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
-                <div class="text-center mb-6">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mx-auto mb-4">
-                        <i data-lucide="target" class="w-8 h-8 text-[#4934bc]"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-blue-800">SEO Performance</h3>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Organic traffic increase</span>
-                        <span class="font-bold text-blue-600">15-25%</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Long-tail keyword rankings</span>
-                        <span class="font-bold text-blue-600">20-30%</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Click-through rates</span>
-                        <span class="font-bold text-blue-600">Higher</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Time on page</span>
-                        <span class="font-bold text-blue-600">Increased</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="stat-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border border-purple-200">
-                <div class="text-center mb-6">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 mx-auto mb-4">
-                        <i data-lucide="globe" class="w-8 h-8 text-purple-600"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-purple-800">Social Media ROI</h3>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Content creation time</span>
-                        <span class="font-bold text-purple-600">-60%</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Cross-platform engagement</span>
-                        <span class="font-bold text-purple-600">+35%</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Brand consistency</span>
-                        <span class="font-bold text-purple-600">100%</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Content pipeline</span>
-                        <span class="font-bold text-purple-600">Automated</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="stat-card bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 border border-pink-200">
-                <div class="text-center mb-6">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-100 mx-auto mb-4">
-                        <i data-lucide="play" class="w-8 h-8 text-pink-600"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-pink-800">Video Content Impact</h3>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Conversion rates</span>
-                        <span class="font-bold text-pink-600">40-60%</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Video post engagement</span>
-                        <span class="font-bold text-pink-600">200%+</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Brand positioning</span>
-                        <span class="font-bold text-pink-600">Premium</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-700">Email performance</span>
-                        <span class="font-bold text-pink-600">Enhanced</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-            <div class="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200">
-                <div class="text-center mb-6">
-                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Market Reality</h3>
-                </div>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Competitors investing heavily in AI and video content</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Search algorithms favor rich, multimedia content</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Social platforms prioritize video and interactive content</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Consumers expect immersive product experiences</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
-                <div class="text-center mb-6">
-                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Your Advantage</h3>
-                </div>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>AI infrastructure already in place</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Established workflow and quality standards</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>First-to-market comprehensive approach</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Leverage existing investment for maximum return</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 border border-slate-200">
-            <div class="text-center mb-8">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="bar-chart-3" class="w-8 h-8 text-[#4934bc]"></i>
-                </div>
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">How We'll Measure <span class="text-gradient">Success</span></h3>
-                <p class="text-gray-600">Transparent tracking across all key metrics</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="font-semibold text-gray-900 mb-2">SEO<span class="text-gradient">Rankings</span></div>
-                    <div class="text-sm text-gray-600">Product page visibility and keyword performance</div>
-                </div>
-                <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="font-semibold text-gray-900 mb-2">Traffic <span class="text-gradient">Growth</span></div>
-                    <div class="text-sm text-gray-600">Organic search visitors and page views</div>
-                </div>
-                <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="font-semibold text-gray-900 mb-2"><span class="text-gradient">Engagement</span></div>
-                    <div class="text-sm text-gray-600">Social media metrics and interaction rates</div>
-                </div>
-                <div class="text-center bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="font-semibold text-gray-900 mb-2"><span class="text-gradient">Conversions</span></div>
-                    <div class="text-sm text-gray-600">Sales performance and ROI tracking</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-        <!-- Next Steps -->
-<section id="next-steps" class="section bg-white">
-    <div class="container mx-auto px-6 py-20">
-        <div class="relative gradient-bg rounded-2xl p-10 md:p-16 text-white overflow-hidden">
-            <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full"></div>
-            <div class="absolute -bottom-16 -left-10 w-40 h-40 bg-white/10 rounded-full"></div>
-            <div class="relative z-10">
+        <!-- Video Content -->
+        <section id="video-content" class="section bg-white">
+            <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your Digital Strategy?</h2>
-                    <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8">
-                        Let's maximize your AI investment and create a comprehensive digital marketing ecosystem
-                    </p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="text-gradient">Premium Video</span>: Bring Products to Life</h2>
+                    <p class="text-lg md:text-xl text-slate-600">5-second videos that drive up to 80% higher conversion rates.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                        <h3 class="text-xl md:text-2xl font-bold mb-6">Immediate Actions</h3>
-                        <div class="space-y-4 text-left">
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="text-sm font-bold">1</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-blue-300">Select Pilot Products</div>
-                                    <div class="text-sm text-gray-300">Choose 20 Alex Marie pieces for initial testing</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="text-sm font-bold">2</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-purple-300">Define Success Metrics</div>
-                                    <div class="text-sm text-gray-300">Establish baseline measurements</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="text-sm font-bold">3</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-pink-300">Team Alignment</div>
-                                    <div class="text-sm text-gray-300">Coordinate with SEO and social media teams</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start space-x-4">
-                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="text-sm font-bold">4</span>
-                                </div>
-                                <div>
-                                    <div class="font-semibold text-green-300">Launch Timeline</div>
-                                    <div class="text-sm text-gray-300">Confirm start date and milestones</div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="stat-card bg-white rounded-lg p-4 text-center shadow-lg border border-slate-200/50">
+                        <video class="w-full h-auto rounded-lg mb-4" controls preload="metadata">
+                            <source src="https://github.com/Advertflair/Pitch-dillards/raw/main/assets/videos/alex-marie-option-1.mp4" type="video/mp4">
+                        </video>
+                        <h3 class="font-semibold text-slate-900">Alex Marie Embroidered Set</h3>
+                        <p class="text-sm text-slate-600">360° rotation</p>
                     </div>
-                    
-                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                        <h3 class="text-xl md:text-2xl font-bold mb-6">Decision Checklist</h3>
-                        <div class="space-y-4 text-left">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-4 h-4 border-2 border-blue-400 rounded bg-transparent"></div>
-                                <span class="text-gray-300">Service package selection</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-4 h-4 border-2 border-purple-400 rounded bg-transparent"></div>
-                                <span class="text-gray-300">Budget approval for expanded services</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-4 h-4 border-2 border-pink-400 rounded bg-transparent"></div>
-                                <span class="text-gray-300">Team resource allocation</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="w-4 h-4 border-2 border-green-400 rounded bg-transparent"></div>
-                                <span class="text-gray-300">Launch timeline confirmation</span>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8 p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
-                            <div class="font-bold text-center">Your Digital Transformation Awaits</div>
-                            <div class="text-sm text-center text-blue-100 mt-1">Let's turn your AI images into a complete marketing ecosystem</div>
-                        </div>
+                    <div class="stat-card bg-white rounded-lg p-4 text-center shadow-lg border border-slate-200/50">
+                         <video class="w-full h-auto rounded-lg mb-4" controls preload="metadata">
+                            <source src="https://github.com/Advertflair/Pitch-dillards/raw/main/assets/videos/Reba%20Sage%20Knit%20V-Neck%20Asymmetrical%20Fringe%20Long%20Sleeve%20Button%20Down%20Cardigan.mp4" type="video/mp4">
+                        </video>
+                        <h3 class="font-semibold text-slate-900">Reba Sage Knit Cardigan</h3>
+                        <p class="text-sm text-slate-600">Model sequence</p>
                     </div>
-                </div>
-                
-                <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 mb-12">
-                    <h3 class="text-xl md:text-2xl font-bold mb-6">Common Questions We Address</h3>
-                    <div class="grid md:grid-cols-2 gap-8 text-left">
-                        <div class="space-y-4">
-                            <div>
-                                <div class="font-semibold text-blue-300 mb-2">Q: How does this integrate with our existing SEO team?</div>
-                                <div class="text-sm text-gray-300">A: We provide the product intelligence and handle technical implementation.</div>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-purple-300 mb-2">Q: What's the time commitment from our team?</div>
-                                <div class="text-sm text-gray-300">A: Minimal - we leverage your existing approval process with enhanced outputs.</div>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="font-semibold text-pink-300 mb-2">Q: Can we start with just one service?</div>
-                                <div class="text-sm text-gray-300">A: Absolutely - we recommend starting with SEO metadata for immediate impact.</div>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-green-300 mb-2">Q: How do you ensure brand consistency?</div>
-                                <div class="text-sm text-gray-300">A: Same quality controls as current image process, extended to all content types.</div>
-                            </div>
-                        </div>
+                    <div class="stat-card bg-white rounded-lg p-4 text-center shadow-lg border border-slate-200/50">
+                         <video class="w-full h-auto rounded-lg mb-4" controls preload="metadata">
+                            <source src="https://github.com/Advertflair/Pitch-dillards/raw/main/assets/videos/RowmTall%20Tourister%20Short%20Sleeve%20Multi%20Stripe%20Camp%20Button%20Front%20Shirt.mp4" type="video/mp4">
+                        </video>
+                        <h3 class="font-semibold text-slate-900">RowmTall Stripe Shirt</h3>
+                        <p class="text-sm text-slate-600">Styling transformation</p>
                     </div>
-                </div>
-                
-                <div class="text-center">
-                    <div class="text-sm text-white/60 mb-4">Ready to discuss your digital transformation?</div>
-                    <a href="https://calendly.com/advertflair/unlock-the-full-potential-of-your-ai-investment" 
-                       target="_blank"
-                       class="inline-block bg-[#fe2267] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#e01b58] transition-all duration-300 transform hover:scale-105">
-                        Book Your Free Consultation
-                    </a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
+        <!-- Pricing -->
+        <section id="pricing" class="section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Investment <span class="text-gradient">Packages</span></h2>
+                    <p class="text-lg md:text-xl text-slate-600">Transparent pricing that scales with your needs</p>
+                    <div class="mt-4 text-sm text-slate-500">Base AI image generation: $65 per image</div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- SEO Enhanced -->
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200/50 flex flex-col">
+                        <div class="text-center mb-6">
+                             <h3 class="text-lg font-bold text-[#4934bc] mb-2 flex items-center justify-center"><i data-lucide="search" class="w-5 h-5 mr-2"></i>SEO Enhanced</h3>
+                            <p class="text-sm text-slate-600">Current Images + Metadata</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-6 flex-grow">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>AI product images</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Advanced SEO metadata</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Schema.org markup</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Long-tail keywords</span></li>
+                        </ul>
+                        <div class="text-center bg-slate-100 p-4 rounded-lg mt-auto">
+                            <div class="text-3xl font-bold text-[#4934bc] mb-1">$90</div>
+                            <div class="text-sm text-slate-600">per image</div>
+                        </div>
+                    </div>
+                    <!-- Social Ready -->
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200/50 flex flex-col">
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-bold text-[#4934bc] mb-2 flex items-center justify-center"><i data-lucide="share-2" class="w-5 h-5 mr-2"></i>Social Ready</h3>
+                            <p class="text-sm text-slate-600">Images + SEO + Social</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-6 flex-grow">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Everything in SEO Enhanced</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Multi-platform social assets</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>AI-generated captions</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Hashtag strategy</span></li>
+                        </ul>
+                        <div class="text-center bg-slate-100 p-4 rounded-lg mt-auto">
+                            <div class="text-3xl font-bold text-[#4934bc] mb-1">$125</div>
+                            <div class="text-sm text-slate-600">per image</div>
+                        </div>
+                    </div>
+                    <!-- Video Enhanced -->
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200/50 flex flex-col">
+                        <div class="text-center mb-6">
+                           <h3 class="text-lg font-bold text-[#4934bc] mb-2 flex items-center justify-center"><i data-lucide="video" class="w-5 h-5 mr-2"></i>Video Enhanced</h3>
+                            <p class="text-sm text-slate-600">5-Second Premium Videos</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-6 flex-grow">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Product rotation videos</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Styling demonstrations</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Multiple aspect ratios</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Platform optimization</span></li>
+                        </ul>
+                        <div class="text-center bg-slate-100 p-4 rounded-lg mt-auto">
+                            <div class="text-3xl font-bold text-[#4934bc] mb-1">$325</div>
+                            <div class="text-sm text-slate-600">per 5s video</div>
+                        </div>
+                    </div>
+                    <!-- Complete Suite -->
+                    <div class="stat-card bg-white rounded-2xl p-6 shadow-lg border-2 border-[#ff9e02] relative flex flex-col">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-[#ff9e02] text-white px-4 py-1 rounded-full text-xs font-bold">MOST POPULAR</div>
+                        </div>
+                        <div class="text-center mb-6 mt-2">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 flex items-center justify-center"><i data-lucide="package-check" class="w-5 h-5 mr-2 text-[#ff9e02]"></i>Complete Suite</h3>
+                            <p class="text-sm text-slate-600">All Services + Analytics</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 mb-6 flex-grow">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#ff9e02] mt-0.5 flex-shrink-0"></i><span>Everything included</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#ff9e02] mt-0.5 flex-shrink-0"></i><span>Performance analytics</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#ff9e02] mt-0.5 flex-shrink-0"></i><span>Monthly optimization</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#ff9e02] mt-0.5 flex-shrink-0"></i><span>Priority support</span></li>
+                        </ul>
+                        <div class="text-center bg-[#ff9e02]/10 p-4 rounded-lg mt-auto">
+                            <div class="text-3xl font-bold text-[#ff9e02] mb-1">$412.50</div>
+                            <div class="text-sm text-slate-600">per bundle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Integration -->
+        <section id="integration" class="section bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Integration <span class="text-gradient">Strategy</span></h2>
+                    <p class="text-lg md:text-xl text-slate-600">A seamless, phased approach to enhancing your current workflow.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="stat-card bg-white rounded-2xl shadow-lg p-8 border border-slate-200/50">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-[#4934bc]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-[#4934bc]">1</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Foundation</h3>
+                            <p class="text-sm text-slate-600">Week 1-2</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Implement enhanced metadata</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Set up social content templates</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Create initial video assets</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Establish analytics baseline</span></li>
+                        </ul>
+                    </div>
+                     <div class="stat-card bg-white rounded-2xl shadow-lg p-8 border border-slate-200/50">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-[#4934bc]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-[#4934bc]">2</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Automation</h3>
+                            <p class="text-sm text-slate-600">Week 3-4</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Deploy automated social posting</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Integrate video on product pages</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Monitor performance metrics</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Team training & workflow integration</span></li>
+                        </ul>
+                    </div>
+                     <div class="stat-card bg-white rounded-2xl shadow-lg p-8 border border-slate-200/50">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-[#4934bc]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-[#4934bc]">3</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Optimization</h3>
+                            <p class="text-sm text-slate-600">Week 5-6</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700">
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Analyze performance data</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Refine content strategy</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Scale successful approaches</span></li>
+                            <li class="flex items-start space-x-2"><i data-lucide="check" class="w-4 h-4 text-[#4934bc] mt-0.5 flex-shrink-0"></i><span>Plan next quarter expansion</span></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="grid md:grid-cols-2 gap-8">
+                    <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center"><i data-lucide="users" class="w-6 h-6 mr-3 text-[#4934bc]"></i>Working with Your SEO Team</h3>
+                        <div class="space-y-4">
+                             <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-[#4934bc]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-sm font-bold text-[#4934bc]">We</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-900">Provide</div>
+                                    <div class="text-sm text-slate-600">Granular product intelligence and optimized content</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-sm font-bold text-slate-600">You</span>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-slate-900">Manage</div>
+                                    <div class="text-sm text-slate-600">Technical SEO, site structure, and strategy implementation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center"><i data-lucide="calendar-clock" class="w-6 h-6 mr-3 text-[#4934bc]"></i>Expected Timeline Results</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-slate-100 rounded-lg">
+                                <span class="font-semibold text-[#4934bc]">Week 2</span>
+                                <span class="text-xl font-bold text-[#4934bc]">+15%</span>
+                            </div>
+                             <div class="flex justify-between items-center p-3 bg-slate-100 rounded-lg">
+                                <span class="font-semibold text-[#4934bc]">Week 4</span>
+                                <span class="text-xl font-bold text-[#4934bc]">+35%</span>
+                            </div>
+                             <div class="flex justify-between items-center p-3 bg-slate-100 rounded-lg">
+                                <span class="font-semibold text-[#4934bc]">Week 6</span>
+                                <span class="text-xl font-bold text-[#4934bc]">+60%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Impact -->
+        <section id="business-impact" class="section">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Expected Business <span class="text-gradient">Impact</span></h2>
+                    <p class="text-lg md:text-xl text-slate-600">Measurable results you can track</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                    <div class="stat-card bg-white rounded-2xl p-8 border border-slate-200/50">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mr-4">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-[#4934bc]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800">SEO Performance</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex justify-between"><span>Organic traffic increase</span> <strong class="text-[#4934bc]">15-25%</strong></li>
+                            <li class="flex justify-between"><span>Long-tail keyword rankings</span> <strong class="text-[#4934bc]">20-30%</strong></li>
+                            <li class="flex justify-between"><span>Click-through rates</span> <strong class="text-[#4934bc]">Higher</strong></li>
+                            <li class="flex justify-between"><span>Time on page</span> <strong class="text-[#4934bc]">Increased</strong></li>
+                        </ul>
+                    </div>
+                    <div class="stat-card bg-white rounded-2xl p-8 border border-slate-200/50">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mr-4">
+                                <i data-lucide="thumbs-up" class="w-6 h-6 text-[#4934bc]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800">Social Media ROI</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex justify-between"><span>Content creation time</span> <strong class="text-[#4934bc]">-60%</strong></li>
+                            <li class="flex justify-between"><span>Cross-platform engagement</span> <strong class="text-[#4934bc]">+35%</strong></li>
+                            <li class="flex justify-between"><span>Brand consistency</span> <strong class="text-[#4934bc]">100%</strong></li>
+                            <li class="flex justify-between"><span>Content pipeline</span> <strong class="text-[#4934bc]">Automated</strong></li>
+                        </ul>
+                    </div>
+                    <div class="stat-card bg-white rounded-2xl p-8 border border-slate-200/50">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-[#4934bc]/10 mr-4">
+                                <i data-lucide="dollar-sign" class="w-6 h-6 text-[#4934bc]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800">Video Content Impact</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex justify-between"><span>Conversion rates</span> <strong class="text-[#4934bc]">40-60%</strong></li>
+                            <li class="flex justify-between"><span>Video post engagement</span> <strong class="text-[#4934bc]">200%+</strong></li>
+                            <li class="flex justify-between"><span>Brand positioning</span> <strong class="text-[#4934bc]">Premium</strong></li>
+                            <li class="flex justify-between"><span>Email performance</span> <strong class="text-[#4934bc]">Enhanced</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
+                        <div class="text-center mb-6">
+                            <div class="w-12 h-12 bg-[#fe2267]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="alert-triangle" class="w-6 h-6 text-[#fe2267]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Market Reality</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                            <li>Competitors investing heavily in AI and video content</li>
+                            <li>Search algorithms favor rich, multimedia content</li>
+                            <li>Social platforms prioritize video and interactive content</li>
+                            <li>Consumers expect immersive product experiences</li>
+                        </ul>
+                    </div>
+                    <div class="stat-card bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
+                        <div class="text-center mb-6">
+                            <div class="w-12 h-12 bg-[#4934bc]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-[#4934bc]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Your Advantage</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 list-disc list-inside">
+                            <li>AI infrastructure already in place</li>
+                            <li>Established workflow and quality standards</li>
+                            <li>First-to-market comprehensive approach</li>
+                            <li>Leverage existing investment for maximum return</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-[#4934bc]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="bar-chart-3" class="w-8 h-8 text-[#4934bc]"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">How We'll Measure <span class="text-gradient">Success</span></h3>
+                        <p class="text-slate-600">Transparent tracking across all key metrics</p>
+                    </div>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center bg-slate-100 p-6 rounded-xl">
+                            <h4 class="font-semibold text-slate-900 mb-2 flex items-center justify-center"><i data-lucide="search" class="w-5 h-5 mr-2 text-[#4934bc]"></i>SEO Rankings</h4>
+                            <div class="text-sm text-slate-600">Product page visibility and keyword performance</div>
+                        </div>
+                        <div class="text-center bg-slate-100 p-6 rounded-xl">
+                            <h4 class="font-semibold text-slate-900 mb-2 flex items-center justify-center"><i data-lucide="mouse-pointer-click" class="w-5 h-5 mr-2 text-[#4934bc]"></i>Traffic Growth</h4>
+                            <div class="text-sm text-slate-600">Organic search visitors and page views</div>
+                        </div>
+                        <div class="text-center bg-slate-100 p-6 rounded-xl">
+                            <h4 class="font-semibold text-slate-900 mb-2 flex items-center justify-center"><i data-lucide="thumbs-up" class="w-5 h-5 mr-2 text-[#4934bc]"></i>Engagement</h4>
+                            <div class="text-sm text-slate-600">Social media metrics and interaction rates</div>
+                        </div>
+                        <div class="text-center bg-slate-100 p-6 rounded-xl">
+                            <h4 class="font-semibold text-slate-900 mb-2 flex items-center justify-center"><i data-lucide="dollar-sign" class="w-5 h-5 mr-2 text-[#4934bc]"></i>Conversions</h4>
+                            <div class="text-sm text-slate-600">Sales performance and ROI tracking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section id="next-steps" class="section bg-white">
+            <div class="container mx-auto px-6">
+                <div class="relative gradient-bg rounded-2xl p-10 md:p-16 text-white overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full"></div>
+                    <div class="absolute -bottom-16 -left-10 w-40 h-40 bg-white/10 rounded-full"></div>
+                    <div class="relative z-10">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your Digital Strategy?</h2>
+                            <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+                                Let's maximize your AI investment and create a comprehensive digital marketing ecosystem.
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 mb-12">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                                <h3 class="text-xl md:text-2xl font-bold mb-6 flex items-center"><i data-lucide="list-checks" class="w-6 h-6 mr-3"></i>Immediate Actions</h3>
+                                <div class="space-y-4 text-left">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-[#ff9e02] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="package-search" class="w-5 h-5"></i></div>
+                                        <div>
+                                            <div class="font-semibold">Select Pilot Products</div>
+                                            <div class="text-sm text-white/80">Choose 20 Alex Marie pieces for initial testing</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-[#ff9e02] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="gauge-circle" class="w-5 h-5"></i></div>
+                                        <div>
+                                            <div class="font-semibold">Define Success Metrics</div>
+                                            <div class="text-sm text-white/80">Establish baseline measurements</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-[#ff9e02] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="users" class="w-5 h-5"></i></div>
+                                        <div>
+                                            <div class="font-semibold">Team Alignment</div>
+                                            <div class="text-sm text-white/80">Coordinate with SEO and social media teams</div>
+                                        </div>
+                                    </div>
+                                     <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-[#ff9e02] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i data-lucide="rocket" class="w-5 h-5"></i></div>
+                                        <div>
+                                            <div class="font-semibold">Launch Timeline</div>
+                                            <div class="text-sm text-white/80">Confirm start date and milestones</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                                <h3 class="text-xl md:text-2xl font-bold mb-6 flex items-center"><i data-lucide="clipboard-check" class="w-6 h-6 mr-3"></i>Decision Checklist</h3>
+                                <div class="space-y-4 text-left">
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="package" class="w-5 h-5 text-white/80"></i>
+                                        <span class="text-white/80">Service package selection</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="dollar-sign" class="w-5 h-5 text-white/80"></i>
+                                        <span class="text-white/80">Budget approval for expanded services</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="user-plus" class="w-5 h-5 text-white/80"></i>
+                                        <span class="text-white/80">Team resource allocation</span>
+                                    </div>
+                                     <div class="flex items-center space-x-3">
+                                        <i data-lucide="calendar-check" class="w-5 h-5 text-white/80"></i>
+                                        <span class="text-white/80">Launch timeline confirmation</span>
+                                    </div>
+                                </div>
+                                <div class="mt-8 p-4 bg-gradient-to-r from-[#4934bc] to-[#fe2267] rounded-lg">
+                                    <div class="font-bold text-center">Your Digital Transformation Awaits</div>
+                                    <div class="text-sm text-center text-white/80 mt-1">Let's turn your AI images into a complete marketing ecosystem</div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
+                            <h3 class="text-xl md:text-2xl font-bold mb-6 text-center flex items-center justify-center"><i data-lucide="message-circle-question" class="w-6 h-6 mr-3"></i>Common Questions We Address</h3>
+                            <div class="grid md:grid-cols-2 gap-8 text-left">
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="font-semibold text-white mb-1">Q: How does this integrate with our existing SEO team?</div>
+                                        <div class="text-sm text-white/80">A: We provide the product intelligence and handle technical implementation.</div>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-white mb-1">Q: What's the time commitment from our team?</div>
+                                        <div class="text-sm text-white/80">A: Minimal - we leverage your existing approval process with enhanced outputs.</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="font-semibold text-white mb-1">Q: Can we start with just one service?</div>
+                                        <div class="text-sm text-white/80">A: Absolutely - we recommend starting with SEO metadata for immediate impact.</div>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-white mb-1">Q: How do you ensure brand consistency?</div>
+                                        <div class="text-sm text-white/80">A: Same quality controls as current image process, extended to all content types.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="https://calendly.com/advertflair/unlock-the-full-potential-of-your-ai-investment" target="_blank" class="inline-block bg-[#fe2267] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#e01b58] transition-all duration-300 transform hover:scale-105">
+                                Book Your Free Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
-
-    <!-- Footer -->
     <footer class="bg-slate-800 text-slate-400 py-12">
         <div class="container mx-auto px-6 text-center">
-            <div class="flex items-center justify-center space-x-2 mb-4">
-                <img src="https://cdn.prod.website-files.com/6336da2704c4776a047e9529/6336da2704c47740ce7e9542_image%201.webp" alt="Advertflair Logo" class="h-10 w-auto filter invert brightness-0">
-            </div>
+            <img src="https://cdn.prod.website-files.com/6336da2704c4776a047e9529/6336da2704c47740ce7e9542_image%201.webp" alt="Advertflair Logo" class="h-10 w-auto filter invert brightness-0 mx-auto mb-4">
             <p>Your Digital Transformation Partner</p>
             <p class="mt-4 text-sm">&copy; 2025 Advertflair. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Smooth scrolling navigation
-        const navDots = document.querySelectorAll('.nav-dot');
-        const sections = document.querySelectorAll('section[id]');
-
-        // Navigation dot click handlers
-        navDots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                const targetId = this.getAttribute('data-target');
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Update active navigation dot on scroll
-        function updateActiveNav() {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navDots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('data-target') === current) {
-                    dot.classList.add('active');
-                }
-            });
-        }
-
-        // Scroll event listener
-        window.addEventListener('scroll', updateActiveNav);
-
-        // Initialize on load
         document.addEventListener('DOMContentLoaded', function() {
             lucide.createIcons();
+
+            const navDots = document.querySelectorAll('.nav-dot');
+            const sections = document.querySelectorAll('section[id]');
+
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - (window.innerHeight / 2)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navDots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('data-target') === current) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            navDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            window.addEventListener('scroll', updateActiveNav);
             updateActiveNav();
         });
     </script>
-
 </body>
 </html>
